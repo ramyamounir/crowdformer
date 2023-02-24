@@ -10,10 +10,6 @@ import utils
 
 # === DATA === #
 
-# dataset_name = 'SHA'
-# beta = 1
-# batch_size = 6
-
 dataset_name = 'SHB'
 beta = 7
 batch_size = 6
