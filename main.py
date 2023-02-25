@@ -163,6 +163,9 @@ scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[300], ga
 train_data = pre_data(train_list)
 val_data = pre_data(val_list)
 
+print(train_data.keys())
+quit()
+
 # logging
 utils.checkdir(f'out/checkpoints/{dataset_name}')
 writer = utils.get_writer(f'out/logs/{dataset_name}')
