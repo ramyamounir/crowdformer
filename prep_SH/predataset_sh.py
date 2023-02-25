@@ -11,7 +11,7 @@ from scipy.ndimage.filters import gaussian_filter
 import random
 
 '''set your data path'''
-root = '/home/mounir.r/Documents/crowdformer/data/ShanghaiTech/'
+root = '/home/ramy/Documents/crowdformer/data/ShanghaiTech/'
 
 part_A_train = os.path.join(root, 'part_A_final/train_data', 'images')
 part_A_test = os.path.join(root, 'part_A_final/test_data', 'images')
@@ -64,6 +64,8 @@ for img_path in img_paths:
 
     mat = io.loadmat(img_path.replace('.jpg', '.mat').replace('images', 'ground_truth').replace('IMG_', 'GT_IMG_'))
     Gt_data = mat["image_info"][0][0][0][0][0]
+    print(Gt_data.shape)
+    quit()
 
     rate = 1
     rate_1 = 1

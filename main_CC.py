@@ -2,33 +2,27 @@ import torch
 import torch.nn as nn
 from torchvision import transforms
 from pvt_v2 import pvt_v2_b5
-from prep_data.image import load_data
-from prep_data.dataset import listDataset
+from prep_CC.image import load_data
+from prep_CC.dataset import listDataset
 import numpy as np
 import os, math
 import utils
 
 # === DATA === #
 
-# dataset_name = 'SHA'
-# beta = 1
-# batch_size = 6
-
-dataset_name = 'SHB'
+dataset_name = 'NOV'
 beta = 7
 batch_size = 6
 
 
-root = 'data/ShanghaiTech/npydata'
-if dataset_name == 'SHA':
-    train_file = f'{root}/ShanghaiA_train.npy'
-    test_file = f'{root}/ShanghaiA_test.npy'
-elif dataset_name == 'SHB':
-    train_file = f'{root}/ShanghaiB_train.npy'
-    test_file = f'{root}/ShanghaiB_test.npy'
+root = 'data/CraneCounting/November/npydata'
+if dataset_name == 'NOV':
+    train_file = f'{root}/november_train.npy'
+    test_file = f'{root}/november_test.npy'
 
 with open(train_file, 'rb') as outfile:
     train_list = np.load(outfile).tolist()
+
 with open(test_file, 'rb') as outfile:
     val_list = np.load(outfile).tolist()
 
